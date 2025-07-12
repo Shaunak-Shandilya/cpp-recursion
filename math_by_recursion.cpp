@@ -67,3 +67,10 @@ int fib(int n){
         return F[n-2]+F[n-1];
     }
 }
+
+// nCr
+
+int C(int n, int r){
+    if (r==0 || r == n) return 1;
+    else return C(n-1,r-1)+C(n-1,r);
+}
