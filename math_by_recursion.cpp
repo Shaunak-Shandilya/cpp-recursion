@@ -20,3 +20,21 @@ int pow(int m, int n){
         return m*pow(m*m,(n-1)/2);
     }
 }
+
+//taylor series find e^x
+double e(int x, int n){
+    static double p = 1, f = 1;
+    double r;
+
+    if (n==0)
+        return 1;
+    r=e(x,n-1);
+    p*=x;
+    f*=n;
+    return r+p/f;
+}
+
+int main(){
+    printf("%lf\n",e(4,15));
+    return 1;
+}
