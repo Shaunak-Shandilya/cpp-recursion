@@ -43,3 +43,13 @@ double e(int x, int n){
     }
 }
 
+//compact recursive fibonacci series
+//excessive recursion
+//O(2^n)
+
+int fib(int n){
+    if (n<=1) return 1;
+return fib(n-2)+fib(n-1);
+}
+
+
