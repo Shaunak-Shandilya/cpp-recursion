@@ -1,3 +1,4 @@
+//Tail Recursion
 void fun1(int n){
   if (n>0){
     printf("%d",n);
@@ -5,6 +6,7 @@ void fun1(int n){
   }
 }
 
+//Head Recursion
 void fun2(int n){
   if (n>0){
     fun2(n-1);
