@@ -1,14 +1,13 @@
-//factorial
-include <iostream>
+#include <iostream>
+#include <stdio.h>
 
+//factorial
 int factorial(int n){
     if(n==0) return 1;
     return factorial(n-1)*n;
 }
 
 //power
-#include <iostream>
-
 int pow(int m, int n){
     if(n==0){
         return(1);
@@ -21,7 +20,7 @@ int pow(int m, int n){
     }
 }
 
-//taylor series find e^x
+//taylor series find e^x O(n^2)
 double e(int x, int n){
     static double p = 1, f = 1;
     double r;
@@ -34,7 +33,13 @@ double e(int x, int n){
     return r+p/f;
 }
 
-int main(){
-    printf("%lf\n",e(4,15));
-    return 1;
+//taylor series horners rule O(n)
+double e(int x, int n){
+    static double s;
+    if (n==0){
+        return s;
+    s = 1+x*s/n;
+    return e(x,n-1);    
+    }
 }
+
